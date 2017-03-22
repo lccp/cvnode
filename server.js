@@ -1,6 +1,9 @@
+require('./config/config');
 var app = require('./config/express');
 
+const port = process.env.PORT;
 
-app.listen(3000, ()=>{
-   console.log('Server initiated')
+
+app.listen(port, () => {
+   console.log(`Server started on port: ${port}`);
 });
