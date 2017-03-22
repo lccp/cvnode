@@ -1,0 +1,17 @@
+{
+  "name": "cvnode",
+  "version": "1.0.0",
+  "description": "Curriculum project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Cavalcante <lcdaponte@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "consign": "^0.1.2",
+    "express": "^4.15.2",
+    "handlebars": "^4.0.5",
+    "hbs": "^4.0.1"
+  }
+}
