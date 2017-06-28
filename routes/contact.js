@@ -1,5 +1,5 @@
 
-const nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 
 module.exports = (app) => {
 
@@ -15,36 +15,32 @@ module.exports = (app) => {
 
     function sendEmail(body) {
 
-        'use strict';
+        let name = body.name;
+        let from = body.email;
+        let message = body.message;
+        let to = 'lcdaponte@gmail.com';
 
-// create reusable transporter object using the default SMTP transport
-        let transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port: 465,
-            secure: true, // secure:true for port 465, secure:false for port 587
+        var transporte = nodemailer.createTransport({
+            service: 'Gmail',
             auth: {
                 user: 'lcdaponte@gmail.com',
                 pass: 'saluc081221'
             }
         });
 
-// setup email data with unicode symbols
-        let mailOptions = {
-            from: `<body.email>`, // sender address
-            to: 'lcdaponte@gmail.com', // list of receivers
-            subject: 'cvnode Contact', // Subject line
-            text: body.message, // plain text body
-            html: body.message // html body
+        var email = {
+            from: from,
+            to: to,
+            subject: 'New Message from cvnode!',  // Um assunto bacana :-)
+            html: 'Nome:' + name +'<br/>' + 'Email:' + from + '<br/>' + 'Mensagem:' + message // O conteúdo do e-mail
         };
 
-// send mail with defined transport object
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                return console.log(error);
-            }
-            console.log('Message %s sent: %s', info.messageId, info.response);
+        transporte.sendMail(email, function(err, info){
+            if(err)
+                throw err; // Oops, algo de errado aconteceu.
+
+            console.log('Email enviado! Leia as informações adicionais: ', info);
         });
 
     }
-
 };
