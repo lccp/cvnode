@@ -9,9 +9,11 @@
   "author": "Lucas Cavalcante <lcdaponte@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "consign": "^0.1.2",
     "express": "^4.15.2",
     "handlebars": "^4.0.5",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "nodemailer": "^4.0.1"
   }
 }
