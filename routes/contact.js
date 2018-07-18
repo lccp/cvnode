@@ -1,12 +1,12 @@
+var sendEmail = require('../services/mailService');
 
-var sendEmail = require('nodemailer');
 
 module.exports = (app) => {
 
     app.post('/contact', (req, res) => {
-        console.log(req.body);
+        // console.log(req.body);
 
-        //sendEmail(req.body);
+        sendEmail(req.body.name, req.body.email, req.body.message);
 
 
         res.sendStatus(200);
