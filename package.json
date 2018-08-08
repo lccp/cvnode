@@ -4,7 +4,8 @@
   "description": "Curriculum project",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "forever start server.js",
+    "stop": "forever stopall"
   },
   "author": "Lucas Cavalcante <lcdaponte@gmail.com>",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "body-parser": "^1.17.2",
     "consign": "^0.1.5",
     "express": "^4.15.2",
+    "forever": "^0.15.3",
     "handlebars": "^4.0.5",
     "hbs": "^4.0.1",
     "nodemailer": "^4.6.7"
